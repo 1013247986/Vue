@@ -170,6 +170,29 @@ export const updateName = function({ dispatch, state }, name) {
     }
   }
   ```
+  action内部写法：
+  
+  ```js
+  // 第一种写法简写形式
+  　　const actions = {
+  　　　　[addPlus]({commit}) { // 简写方式,待研究
+  　　　　　　commit('[setState]', value)
+  　　　　　　//此处value可以是对象,可以是固定值等
+  　　　　}
+  　　}
+  　　
+  // 第二种形式
+  　　const actions = {
+  　　　　[addPlus]({context},value) { //context也可以是store
+  　　　　　　//context 官方给出的指定对象, 此处context可以理解为store对象
+  　　　　　　context.commit('[setState]', value)
+  　　　　}
+  　　}
+  　　/* 两处的commit都是提交的mutations中的字符串的事件类型名称,对应会调用mutations中的回调函数 */
+  ```
+  
+  
+  
   **希望大家可以看到的是，各个类型的 API各司其职**
   
   **mutation 只管存，你给我（dispatch）我就存；**
@@ -214,7 +237,22 @@ export const updateName = function({ dispatch, state }, name) {
         
     * mapActions使用 写在：**methods方法里使用**
     
-      （1）...mapActions（{定义名字："方法名"，定义名字："方法名"}）
+      （1）...mapActions（{定义名字："方法名"，定义名字："方法名"}
+      
+      ```js
+      actions在组件中的调用方式: 
+      　　import mapActions from 'vuex'
+      　　methods: {
+      　　　　...mapActions: ([
+      　　　　　'addPlus'　
+      　　　　]),
+      　　　　setAddPlus () {
+      　　　　　　this.$store.dispatch('addPlus', [value]) // 异步调用mutations
+      　　　　}
+      　　}
+      ```
+      
+      
 
 #### 三、vuex模块化
 
