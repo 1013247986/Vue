@@ -20,29 +20,29 @@
 
 * data更新时触发
 
-####Update
+#### Update
 
 * data更新后触发
 
-####beforeDestroy（销毁前）
+#### beforeDestroy（销毁前）
 
-####destroyed（销毁完毕）
+#### destroyed（销毁完毕）
 
 
 
 ![](E:\总结知识\Imgs\vue生命周期.png)
 
-##钩子函数
+## 钩子函数
 
 #### watch
 
 监听函数，监听数据 路由的变化
 
-####methods
+#### methods
 
 方法：每当触发重新渲染时，调用方法将总会再次执行函数
 
-####computed
+#### computed
 
 计算属性：计算属性是基于它们的响应式依赖进行缓存的。只在相关响应式依赖发生改变时它们才会重新求值，多次访问 `getAge` 计算属性会立即返回之前的计算结果，而不必再次执行函数
 
