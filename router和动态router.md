@@ -1,7 +1,6 @@
-##router
+## router
 
-###配置步骤
-
+#### 配置步骤
 一、安装router
 
 ```npm
@@ -42,7 +41,8 @@ const app = new Vue({
 
 **配置好了路由，接下来就该在HTML中使用了**
 
-###声明式导航
+#### 声明式导航
+>>>>>>> adb87ad9935680a900b98ab7d7eb3b988979a396
 
 ```html
   <!-- 使用 router-link 组件来导航. -->
@@ -54,8 +54,7 @@ const app = new Vue({
 <router-view></router-view>
 ```
 
-###编程式导航
-
+#### 编程式导航
 ####router.push()方法
 
 ```js
@@ -157,7 +156,6 @@ export default {
 参数是一个整数，意思是在 history 记录中向前或者后退多少步，类似 `window.history.go(n)`。 [Browser History APIs](https://developer.mozilla.org/en-US/docs/Web/API/History_API)点击了解更多
 
 ##动态router
-
 注：在使用动态路由或者编程式的路由时，会有这样一个问题，路由切换后，页面不切换，解决方法：
 使用watch监听路由的变化，并做数据的覆盖处理
 
@@ -222,8 +220,7 @@ export default new Router({
 
 
 ##导航守卫
-
-####完整的导航解析流程
+#### 完整的导航解析流程
 
 1. 导航被触发。
 2. 在失活的组件里调用离开守卫。
@@ -238,7 +235,7 @@ export default new Router({
 11. 触发 DOM 更新。
 12. 用创建好的实例调用 `beforeRouteEnter` 守卫中传给 `next` 的回调函数。
 
-####拦截过滤认证
+#### 拦截过滤认证
 
 单个组件：
 
